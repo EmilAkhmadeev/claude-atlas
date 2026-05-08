@@ -1,8 +1,12 @@
 ---
 name: orchestrator
-description: TBD
+description: Coordinates multi-step tasks by breaking them into subtasks and delegating to specialized subagents. Use when a task spans multiple concerns (e.g., code + security + performance review) or requires sequential steps across different domains.
 tools:
-  - TBD
+  - Task
+  - Read
+  - Grep
+  - Glob
+  - Bash
 ---
 
 # Orchestrator Agent
