@@ -17,6 +17,7 @@ Needs to feel simple — users are non-technical and price-sensitive." -->
 <!-- UI requirements. Example: "Material Design, mobile-first, dark theme." Delete if not applicable. -->
 
 ## Tech Stack
+
 - **Language**:
 - **Framework**:
 - **Package manager**: <!-- npm / pnpm / yarn / bun / uv /pip / cargo / go / etc. -->
@@ -26,6 +27,7 @@ Needs to feel simple — users are non-technical and price-sensitive." -->
 - **Linter / Formatter**: <!-- eslint+prettier / biome / ruff / etc. -->
 
 ## Shape
+
 - **Frontend**: <!-- yes / no -->
 - **Backend**: <!-- yes / no -->
 - **Database**: <!-- yes / no -->
@@ -52,14 +54,3 @@ Example: "Billing isolated module — audit independence." -->
 <!-- Terms or abbreviations not obvious from the code. Goes directly into CLAUDE.md.
 Example: SKU = Stock Keeping Unit, unique product ID from the warehouse system.
 Example: "fulfillment" = picking + packing + shipping, handled by third-party API. -->
-
-
-## Shape
-
-- **Frontend**: <!-- yes / no -->
-- **Backend**: <!-- yes / no -->
-- **Database**: <!-- yes / no -->
-- **Docs directory**: <!-- yes / no -->
-- **Monorepo**: <!-- no / turborepo / nx / pnpm workspaces -->
-- **Monorepo packages**: <!-- which packages/apps to configure, e.g. apps/web, packages/api -->
-- **Default branch**: <!-- main / master / other -->

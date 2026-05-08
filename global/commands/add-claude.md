@@ -1,8 +1,6 @@
 # Add Claude
 
----
-IMPORTANT: If the project is empty (no source files, no manifests), use `/setup-claude` instead.
----
+**IMPORTANT:** If the project is empty (no source files, no manifests), use `/setup-claude` instead.
 
 Scan this project's codebase and customize every `.claude/` config file to match the actual tech stack, conventions, and patterns in use.
 
@@ -11,6 +9,7 @@ Scan this project's codebase and customize every `.claude/` config file to match
 ## Phase 1: Scan
 
 Check package manifests and config files to detect:
+
 - **Language + framework**: `package.json`, `pyproject.toml`, `Cargo.toml`, `go.mod`, `Gemfile`, `composer.json`, `build.gradle`, `pom.xml`, `Makefile`, `Dockerfile`
 - **Package manager**: lockfile type (`package-lock.json` → npm, `pnpm-lock.yaml` → pnpm, `yarn.lock` → yarn, `bun.lockb` → bun)
 - **Test framework**: `jest.config.*`, `vitest.config.*`, `pytest.ini`, `conftest.py`, `playwright.config.*`
@@ -27,7 +26,7 @@ Check package manifests and config files to detect:
 
 Present all findings at once using AskUserQuestion:
 
-```
+```markdown
 I scanned your project. Here's what I found:
 
 **Language**: [language]
@@ -69,6 +68,7 @@ Fill in each section. Remove sections that don't apply. Delete all `> REPLACE:` 
 ### 3.2 — settings.json
 
 Update the `allow` permissions to match the actual package manager and scripts:
+
 - Replace `npm run` with the actual package manager (`pnpm run`, `bun run`, `cargo`, `go test`, `python -m pytest`, `make`, etc.)
 - Add allow rules for any project-specific scripts that Claude will commonly run
 - Keep all `deny` rules unchanged — they are universal
@@ -84,6 +84,7 @@ Only update if the detected test framework has specific idioms not covered by th
 ### 3.5 — rules/security.md
 
 Update the `paths:` frontmatter to match actual directories:
+
 - Replace `src/api/**`, `src/auth/**`, `src/middleware/**` with actual paths found
 - Keep `**/routes/**` and `**/controllers/**` if those directories exist
 - If no API/auth directories exist, remove the non-matching entries
@@ -119,6 +120,7 @@ No changes needed — the hook auto-detects formatters by checking for binaries 
 ## Phase 4: Review (Silent Pass)
 
 After applying all changes, verify:
+
 - No `> REPLACE:` blocks remain in `CLAUDE.md`
 - All YAML frontmatter is valid
 - `settings.json` allow rules cover the commands actually used in CLAUDE.md
@@ -130,7 +132,7 @@ Only surface issues to the user if something needs fixing.
 
 ## Phase 5: Summary
 
-```
+```markdown
 Done. Here's what changed:
 
 - CLAUDE.md: [summary of sections filled]

@@ -11,7 +11,8 @@ This command helps you create well-formatted commits with conventional commit me
 ## Usage
 
 To create a commit, just type:
-```
+
+```shell
 /commit
 ```
 

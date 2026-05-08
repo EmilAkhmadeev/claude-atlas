@@ -1,8 +1,6 @@
 # Setup Claude
 
----
-IMPORTANT: This command is for empty or new repos with no source code yet. If the project already has source files, use `/add-claude` instead.
----
+**IMPORTANT:** This command is for empty or new repos with no source code yet. If the project already has source files, use `/add-claude` instead.
 
 Configure every `.claude/` config file for a project that doesn't have code yet, based on `project_description.md`.
 
@@ -11,6 +9,7 @@ Configure every `.claude/` config file for a project that doesn't have code yet,
 ## Phase 1: Read project_description.md
 
 Read `project_description.md` from the project root and extract:
+
 - **Language + Framework** from `Tech Stack`
 - **Package manager** from `Tech Stack`
 - **CSS** from `Tech Stack`
@@ -32,7 +31,7 @@ Treat any field left as a comment placeholder (e.g. `<!-- ... -->`) or blank as 
 
 If `project_description.md` does not exist or is entirely blank/placeholder, fall back to asking the user directly:
 
-```
+```markdown
 project_description.md is missing or empty. Tell me what you're building so I can configure .claude/ for it:
 
 - Language + framework (e.g. TypeScript + Next.js, Python + FastAPI, Go + stdlib)
@@ -49,7 +48,7 @@ project_description.md is missing or empty. Tell me what you're building so I ca
 
 Present all findings from `project_description.md` at once and confirm with AskUserQuestion before planning any changes:
 
-```
+```markdown
 I read project_description.md. Here's what I'll configure for:
 
 **Language**: [language]
@@ -87,6 +86,7 @@ Fill in each section from `project_description.md`. Remove sections that don't a
 ### 3.2 — settings.json
 
 Update the `allow` permissions to match the stated package manager:
+
 - Replace `npm run` with the actual package manager (`pnpm run`, `bun run`, `cargo`, `go test`, `python -m pytest`, `make`, etc.)
 - Add allow rules for standard scripts of the stated framework
 - Keep all `deny` rules unchanged — they are universal
@@ -102,6 +102,7 @@ Only update if the stated test framework has specific idioms not covered by the 
 ### 3.5 — rules/security.md
 
 Update the `paths:` frontmatter based on the stated architecture:
+
 - Replace placeholder paths with the planned API, auth, and middleware directories
 - If not decided yet, keep defaults as reasonable guesses
 
@@ -136,6 +137,7 @@ No changes needed — the hook auto-detects formatters by checking for binaries 
 ## Phase 4: Review (Silent Pass)
 
 After applying all changes, verify:
+
 - No `> REPLACE:` blocks remain in `CLAUDE.md`
 - All YAML frontmatter is valid
 - `settings.json` allow rules cover the commands listed in CLAUDE.md
@@ -146,7 +148,7 @@ Only surface issues to the user if something needs fixing.
 
 ## Phase 5: Summary
 
-```
+```markdown
 Done. Here's what was configured:
 
 - CLAUDE.md: [summary of sections filled]

@@ -27,7 +27,7 @@ Required token categories: colors (semantic names with dark mode variants), spac
 Pick one primary principle. Don't mix randomly.
 
 | Principle | When to use |
-|---|---|
+| --- | --- |
 | **Glassmorphism** | Overlays, modern dashboards |
 | **Neumorphism** | Settings panels, minimal controls |
 | **Brutalism** | Developer tools, editorial sites |
@@ -45,7 +45,7 @@ Pick one primary principle. Don't mix randomly.
 Use whatever the project already has. Don't mix competing libraries.
 
 | Category | Options (pick one) |
-|---|---|
+| --- | --- |
 | CSS | Tailwind, vanilla CSS, CSS Modules, styled-components, Emotion, UnoCSS, Panda CSS |
 | Primitives | shadcn/ui, Radix, Headless UI, Ark UI, DaisyUI, Mantine, Chakra, Vuetify |
 | Animation | CSS transitions, Framer Motion, GSAP, View Transitions API, AutoAnimate |
