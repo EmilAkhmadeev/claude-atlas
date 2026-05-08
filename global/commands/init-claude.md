@@ -31,7 +31,6 @@ Treat any field left as a comment placeholder (e.g. `<!-- ... -->`) or blank as 
 
 If `project_description.md` does not exist or is entirely blank/placeholder, fall back to asking the user directly:
 
-```markdown
 project_description.md is missing or empty. Tell me what you're building so I can configure .claude/ for it:
 
 - Language + framework (e.g. TypeScript + Next.js, Python + FastAPI, Go + stdlib)
@@ -42,27 +41,24 @@ project_description.md is missing or empty. Tell me what you're building so I ca
 - Frontend? (yes/no — framework if yes)
 - Docs directory planned? (yes/no)
 - Monorepo? (yes/no — tool if yes: turborepo, nx, pnpm workspaces, etc.)
-```
 
 ## Phase 2: Confirm Stack
 
 Present all findings from `project_description.md` at once and confirm with AskUserQuestion before planning any changes:
 
-```markdown
-I read project_description.md. Here's what I'll configure for:
+Use AskUserQuestion with the question text formatted as plain text (no markdown — the dialog does not render it):
 
-**Language**: [language]
-**Framework**: [framework + CSS + DB if applicable]
-**Package manager**: [npm/pnpm/yarn/bun/pip/cargo/go]
-**Test framework**: [jest/vitest/pytest/etc. or "not decided — keeping defaults"]
-**Linter/Formatter**: [eslint+prettier/biome/ruff/etc. or "not decided — keeping defaults"]
-**Architecture**: [layered/feature-based/monorepo/etc.]
-**Has frontend**: [yes/no]
-**Has database**: [yes/no — ORM/migration tool if yes]
-**Has docs dir planned**: [yes/no]
+- Language: [language]
+- Framework: [framework + CSS + DB if applicable]
+- Package manager: [npm/pnpm/yarn/bun/pip/cargo/go]
+- Test framework: [jest/vitest/pytest/etc. or "not decided — keeping defaults"]
+- Linter/Formatter: [eslint+prettier/biome/ruff/etc. or "not decided — keeping defaults"]
+- Architecture: [layered/feature-based/monorepo/etc.]
+- Has frontend: yes/no
+- Has database: yes/no (ORM/migration tool if yes)
+- Has docs dir planned: yes/no
 
-Correct? (yes/no/corrections)
-```
+Is this correct?
 
 Incorporate any corrections before moving on.
 
@@ -148,12 +144,11 @@ Only surface issues to the user if something needs fixing.
 
 ## Phase 5: Summary
 
-```markdown
 Done. Here's what was configured:
 
 - CLAUDE.md: [summary of sections filled]
 - settings.json: [package manager + added rules]
-- rules/security.md: [path changes or "unchanged — defaults kept"]
+- rules/security.md: [path changes or "unchanged"]
 - rules/error-handling.md: [path changes / removed / "unchanged"]
 - rules/frontend.md: [kept with updates / removed]
 - rules/database.md: [kept with updates / removed]
@@ -163,10 +158,10 @@ Done. Here's what was configured:
 - agents/frontend-designer.md: [kept / removed]
 - agents/doc-reviewer.md: [kept / removed]
 
-Left as defaults:
+Left as defaults (no project-specific changes needed):
+
 - [list]
 
 Review: [issues found and fixed / "clean"]
 
 Note: run /add-claude after your first source files exist to refine naming conventions and path patterns against real code.
-```

@@ -26,23 +26,21 @@ Check package manifests and config files to detect:
 
 Present all findings at once using AskUserQuestion:
 
-```markdown
-I scanned your project. Here's what I found:
+Use AskUserQuestion with the question text formatted as plain text (no markdown — the dialog does not render it):
 
-**Language**: [language]
-**Framework**: [framework + CSS + DB if applicable]
-**Package manager**: [npm/pnpm/yarn/bun/pip/cargo/go]
-**Test framework**: [jest/vitest/pytest/etc.]
-**Linter/Formatter**: [eslint+prettier/biome/ruff/etc.]
-**Architecture**: [layered/feature-based/monorepo/etc.]
-**Source dirs**: [list]
-**Test dirs**: [list]
-**Has frontend**: [yes/no]
-**Has database**: [yes/no — ORM/migration tool if yes]
-**Has docs dir**: [yes/no]
+- Language: [language]
+- Framework: [framework + CSS + DB if applicable]
+- Package manager: [npm/pnpm/yarn/bun/pip/cargo/go]
+- Test framework: [jest/vitest/pytest/etc.]
+- Linter/Formatter: [eslint+prettier/biome/ruff/etc.]
+- Architecture: [layered/feature-based/monorepo/etc.]
+- Source dirs: [list]
+- Test dirs: [list]
+- Has frontend: yes/no
+- Has database: yes/no (ORM/migration tool if yes)
+- Has docs dir: yes/no
 
-Should I customize the .claude/ files based on this? (yes/no/corrections)
-```
+Should I customize the .claude/ files based on this?
 
 If a monorepo was detected, also ask: "Which packages/apps should I focus on?"
 
@@ -132,7 +130,6 @@ Only surface issues to the user if something needs fixing.
 
 ## Phase 5: Summary
 
-```markdown
 Done. Here's what changed:
 
 - CLAUDE.md: [summary of sections filled]
@@ -148,7 +145,7 @@ Done. Here's what changed:
 - agents/doc-reviewer.md: [kept / removed]
 
 Left as defaults (no project-specific changes needed):
+
 - [list]
 
 Review: [issues found and fixed / "clean"]
-```
