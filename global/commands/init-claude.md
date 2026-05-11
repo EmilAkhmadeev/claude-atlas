@@ -79,7 +79,7 @@ Fill in each section from `project_description.md`. Remove sections that don't a
 - **Key Decisions**: directly from `Key Decisions`
 - **Domain Knowledge**: directly from `Domain Knowledge`
 
-### 3.2 — settings.json
+### 3.2 — .claude/settings.json
 
 Update the `allow` permissions to match the stated package manager:
 

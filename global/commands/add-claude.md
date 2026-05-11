@@ -63,7 +63,7 @@ Fill in each section. Remove sections that don't apply. Delete all `> REPLACE:` 
 - **Key Decisions**: WHY non-obvious choices were made — this is the most valuable section
 - **Domain Knowledge**: terms or abbreviations that aren't obvious from the code
 
-### 3.2 — settings.json
+### 3.2 — .claude/settings.json
 
 Update the `allow` permissions to match the actual package manager and scripts:
 
